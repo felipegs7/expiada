@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste - Loja de Pôsteres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fafafa;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .poster {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .poster:hover {
+      transform: scale(1.02);
+    }
+
+    .poster img {
+      width: 100%;
+      height: auto;
+    }
+
+    .info {
+      padding: 15px;
+      flex: 1;
+    }
+
+    .info h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .info p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .preco {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+      margin-top: 10px;
+    }
+
+    .botao {
+      margin: 15px;
+      background-color: #cc3366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .botao:hover {
+      background-color: #aa2c55;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Teste</h1>
+    <p>Loja de pôsteres exclusivos</p>
+  </header>
+
+  <main class="galeria">
+    <div class="poster">
+      <img src="poster1.jpg" alt="Pôster de Exemplo 1" />
+      <div class="info">
+        <h2>Obra Exemplo 1</h2>
+        <p>Descrição da obra de exemplo número 1.</p>
+        <p class="preco">R$ 49,90</p>
+      </div>
+      <a href="#" class="botao">Comprar</a>
+    </div>
+
+    <div class="poster">
+      <img src="poster2.jpg" alt="Pôster de Exemplo 2" />
+      <div class="info">
+        <h2>Obra Exemplo 2</h2>
+        <p>Descrição da obra de exemplo número 2.</p>
+        <p class="preco">R$ 59,90</p>
+      </div>
+      <a href="#" class="botao">Comprar</a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2025 Teste — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
