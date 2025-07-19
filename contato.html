@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contato - Teste Loja de Pôsteres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f2d1c9, #f9f7f3);
+      color: #3a2c29;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #6b4c3b;
+      padding: 40px 20px;
+      color: #f9f7f3;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(107,76,59,0.4);
+      font-family: 'Merriweather', serif;
+      letter-spacing: 2px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #f9f7f3;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(107,76,59,0.15);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    label {
+      font-weight: 600;
+      color: #6b4c3b;
+    }
+    input, textarea {
+      padding: 12px 15px;
+      border: 2px solid #a44a3f;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      border-color: #6b4c3b;
+      outline: none;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    button {
+      background: #a44a3f;
+      color: #f9f7f3;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 14px 0;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(164,74,63,0.5);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #7e392f;
+    }
+    footer {
+      background: #6b4c3b;
+      color: #f9f7f3;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Merriweather', serif;
+      font-weight: 300;
+      font-size: 1rem;
+      margin-top: auto;
+      box-shadow: 0 -4px 12px rgba(107,76,59,0.4);
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contato</h1>
+    <p>Fale conosco para dúvidas, sugestões ou orçamentos</p>
+  </header>
+
+  <main>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 Teste — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
