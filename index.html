@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,11 +23,28 @@
       flex-direction: column;
     }
 
-    header {
-      padding: 40px 20px;
-      text-align: center;
+    nav {
+      background:#6b4c3b;
+      padding:15px 20px;
+      box-shadow:0 4px 12px rgba(107,76,59,0.4);
+      font-family:'Merriweather', serif;
+    }
+    nav a {
+      color:#f9f7f3;
+      font-weight:700;
+      font-size:1.25rem;
+      margin-right:20px;
+      text-decoration:none;
+    }
+    nav a:last-child {
+      margin-right: 0;
+    }
+
+    header > div {
+      padding: 30px 20px;
+      text-align:center;
+      color:#f9f7f3;
       background: #6b4c3b;
-      color: #f9f7f3;
       box-shadow: 0 4px 12px rgba(107, 76, 59, 0.4);
       font-family: 'Merriweather', serif;
       letter-spacing: 2px;
@@ -146,6 +164,12 @@
       box-shadow: 0 -4px 12px rgba(107, 76, 59, 0.4);
     }
 
+    footer a {
+      color: #f9f7f3;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+
     @media (max-width: 480px) {
       header h1 {
         font-size: 2rem;
@@ -160,8 +184,14 @@
 <body>
 
   <header>
-    <h1>Teste</h1>
-    <p>Loja de Pôsteres Artísticos Exclusivos</p>
+    <nav>
+      <a href="index.html">Loja</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div>
+      <h1>Teste</h1>
+      <p>Loja de Pôsteres Artísticos Exclusivos</p>
+    </div>
   </header>
 
   <main>
@@ -204,6 +234,7 @@
 
   <footer>
     © 2025 Teste — Todos os direitos reservados.
+    <a href="contato.html">Contato</a>
   </footer>
 
 </body>
