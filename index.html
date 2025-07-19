@@ -1,106 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Teste - Loja de Pôsteres</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste - Loja de Pôsteres Artísticos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* Reset básico */
+    * {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #fafafa;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f2d1c9, #f9f7f3);
+      color: #3a2c29;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background-color: #111;
-      color: white;
-      padding: 30px;
+      padding: 40px 20px;
       text-align: center;
+      background: #6b4c3b;
+      color: #f9f7f3;
+      box-shadow: 0 4px 12px rgba(107, 76, 59, 0.4);
+      font-family: 'Merriweather', serif;
+      letter-spacing: 2px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 32px;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
     header p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #ccc;
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      opacity: 0.85;
     }
 
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+    main {
+      flex-grow: 1;
       max-width: 1200px;
-      margin: auto;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
     }
 
-    .poster {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    .poster-card {
+      background: #f9f7f3;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(107, 76, 59, 0.15);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .poster:hover {
-      transform: scale(1.02);
+    .poster-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(107, 76, 59, 0.3);
     }
 
-    .poster img {
+    .poster-img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-bottom: 4px solid #6b4c3b;
+      transition: transform 0.4s ease;
     }
 
-    .info {
-      padding: 15px;
-      flex: 1;
+    .poster-card:hover .poster-img {
+      transform: scale(1.05);
     }
 
-    .info h2 {
-      font-size: 18px;
-      margin: 0 0 10px;
+    .poster-content {
+      padding: 25px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .info p {
-      font-size: 14px;
-      color: #444;
+    .poster-title {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #6b4c3b;
     }
 
-    .preco {
-      font-size: 16px;
-      font-weight: bold;
-      color: #222;
-      margin-top: 10px;
+    .poster-desc {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #4e3b34;
+      line-height: 1.4;
+      margin-bottom: 20px;
     }
 
-    .botao {
-      margin: 15px;
-      background-color: #cc3366;
-      color: white;
+    .poster-price {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #a44a3f;
+      margin-bottom: 15px;
+    }
+
+    .buy-btn {
+      background: #a44a3f;
+      color: #f9f7f3;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 1.1rem;
       text-align: center;
-      padding: 10px;
-      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(164, 74, 63, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
     }
 
-    .botao:hover {
-      background-color: #aa2c55;
+    .buy-btn:hover {
+      background: #7e392f;
+      box-shadow: 0 6px 16px rgba(126, 57, 47, 0.7);
     }
 
     footer {
+      background: #6b4c3b;
+      color: #f9f7f3;
+      padding: 25px 20px;
       text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: white;
-      font-size: 14px;
+      font-family: 'Merriweather', serif;
+      font-weight: 300;
+      font-size: 1rem;
+      margin-top: auto;
+      box-shadow: 0 -4px 12px rgba(107, 76, 59, 0.4);
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        gap: 25px;
+      }
     }
   </style>
 </head>
@@ -108,30 +161,45 @@
 
   <header>
     <h1>Teste</h1>
-    <p>Loja de pôsteres exclusivos</p>
+    <p>Loja de Pôsteres Artísticos Exclusivos</p>
   </header>
 
-  <main class="galeria">
-    <div class="poster">
-      <img src="poster1.jpg" alt="Pôster de Exemplo 1" />
-      <div class="info">
-        <h2>Obra Exemplo 1</h2>
-        <p>Descrição da obra de exemplo número 1.</p>
-        <p class="preco">R$ 49,90</p>
+  <main>
+    <article class="poster-card">
+      <img src="poster1.jpg" alt="Pôster Exemplo 1" class="poster-img" />
+      <div class="poster-content">
+        <h2 class="poster-title">Obra Exemplo 1</h2>
+        <p class="poster-desc">Uma composição vibrante que explora cores quentes e formas orgânicas, perfeita para decorar seu espaço com arte.</p>
+        <div>
+          <div class="poster-price">R$ 69,90</div>
+          <a href="#" class="buy-btn">Comprar</a>
+        </div>
       </div>
-      <a href="#" class="botao">Comprar</a>
-    </div>
+    </article>
 
-    <div class="poster">
-      <img src="poster2.jpg" alt="Pôster de Exemplo 2" />
-      <div class="info">
-        <h2>Obra Exemplo 2</h2>
-        <p>Descrição da obra de exemplo número 2.</p>
-        <p class="preco">R$ 59,90</p>
+    <article class="poster-card">
+      <img src="poster2.jpg" alt="Pôster Exemplo 2" class="poster-img" />
+      <div class="poster-content">
+        <h2 class="poster-title">Obra Exemplo 2</h2>
+        <p class="poster-desc">Arte minimalista com detalhes delicados e tons suaves, trazendo equilíbrio e elegância para qualquer ambiente.</p>
+        <div>
+          <div class="poster-price">R$ 79,90</div>
+          <a href="#" class="buy-btn">Comprar</a>
+        </div>
       </div>
-      <a href="#" class="botao">Comprar</a>
-    </div>
+    </article>
 
+    <article class="poster-card">
+      <img src="poster3.jpg" alt="Pôster Exemplo 3" class="poster-img" />
+      <div class="poster-content">
+        <h2 class="poster-title">Obra Exemplo 3</h2>
+        <p class="poster-desc">Uma explosão de cores e formas abstratas que trazem energia e criatividade ao seu espaço pessoal ou profissional.</p>
+        <div>
+          <div class="poster-price">R$ 89,90</div>
+          <a href="#" class="buy-btn">Comprar</a>
+        </div>
+      </div>
+    </article>
   </main>
 
   <footer>
