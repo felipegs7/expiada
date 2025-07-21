@@ -1,0 +1,43 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+.loading {
+  margin-top: 50px;
+}
+.olho {
+  display: inline-block;
+  animation: piscar 2s infinite;
+}
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.poster {
+  max-width: 90%;
+  height: auto;
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+}
