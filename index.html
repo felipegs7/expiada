@@ -9,27 +9,34 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="pix.html">PIX</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="loading">
-    <span>Carregando Expiada</span>
-    <span class="olho">👁️</span>
+  <!-- Tela de carregamento -->
+  <div id="tela-carregamento">
+    <p>Carregando Expiada...</p>
+    <div class="barra-container">
+      <div class="barra-progresso" id="barra"></div>
+    </div>
+    <p id="porcentagem">0%</p>
   </div>
 
-  <main>
-    <h1>Pôster Expiada</h1>
-    <img src="img/poster.jpg" alt="Pôster Expiada" class="poster">
-    <a href="pix.html" class="btn">Comprar via PIX</a>
-  </main>
+  <!-- Conteúdo real do site -->
+  <div id="conteudo-site" style="display: none;">
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="pix.html">PIX</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Pôster Expiada</h1>
+      <img src="img/poster.jpg" alt="Pôster Expiada" class="poster">
+      <a href="pix.html" class="btn">Comprar via PIX</a>
+    </main>
+  </div>
 
 </body>
 </html>
