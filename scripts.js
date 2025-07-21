@@ -4,20 +4,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const tela = document.getElementById("tela-carregamento");
   const conteudo = document.getElementById("conteudo-site");
 
-  let progresso = 0;
+  // Verifica se já carregou nesta sessão
+  const jaCarregado = sessionStorage.getItem("jaCarregado");
 
-  const intervalo = setInterval(() => {
-    progresso++;
-    barra.style.width = progresso + "%";
-    porcentagem.textContent = progresso + "%";
+  if (jaCarregado) {
+    // Já carregou, mostra conteúdo direto
+    tela.style.display = "none";
+    conteudo.style.display = "block";
+  } else {
+    // Mostra barra de carregamento normalmente
+    let progresso = 0;
+    const intervalo = setInterval(() => {
+      progresso++;
+      barra.style.width = progresso + "%";
+      porcentagem.textContent = progresso + "%";
 
-    if (progresso === 100) {
-      clearInterval(intervalo);
-      porcentagem.textContent = "Bem-vindo(a)!";
-      setTimeout(() => {
-        tela.style.display = "none";
-        conteudo.style.display = "block";
-      }, 1500);
-    }
-  }, 30);
+      if (progresso === 100) {
+        clearInterval(intervalo);
+        porcentagem.textContent = "Bem-vindo(a)!";
+        sessionStorage.setItem("jaCarregado", "true");
+        setTimeout(() => {
+          tela.style.display = "none";
+          conteudo.style.display = "block";
+        }, 1500);
+      }
+    }, 30);
+  }
 });
