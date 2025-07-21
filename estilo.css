@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Unica+One&display=swap');
 
+/* Corpo geral */
 body {
   font-family: 'Orbitron', 'Unica One', sans-serif;
   background-color: #ffffff;
@@ -9,95 +10,7 @@ body {
   text-align: center;
 }
 
-header, main {
-  padding: 40px 20px;
-}
-
-h1 {
-  font-size: 2.5em;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.poster {
-  max-width: 90%;
-  height: auto;
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-  border-radius: 12px;
-}
-
-a.btn {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1em;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-a.btn:hover {
-  background-color: #444;
-}
-
-.loading {
-  font-size: 1.2em;
-  margin-top: 30px;
-}
-
-.olho {
-  display: inline-block;
-  animation: piscar 2s infinite;
-  margin-left: 10px;
-}
-
-@keyframes piscar {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 40px auto;
-  max-width: 400px;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-}
-
-button {
-  padding: 12px 25px;
-  font-size: 1em;
-  border: none;
-  background-color: #111;
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #333;
-}
-
-code {
-  font-family: monospace;
-  background-color: #eee;
-  padding: 10px 15px;
-  display: inline-block;
-  border-radius: 8px;
-  margin-top: 20px;
-}
+/* Cabeçalho e navegação */
 nav {
   background-color: #000;
   padding: 10px 0;
@@ -122,4 +35,87 @@ nav {
 
 .menu li a:hover {
   color: #888;
+}
+
+/* Carregamento */
+.loading {
+  font-size: 1.2em;
+  margin-top: 30px;
+}
+
+.olho {
+  display: inline-block;
+  animation: piscar 2s infinite;
+  margin-left: 10px;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Conteúdo principal */
+main {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.poster {
+  max-width: 90%;
+  height: auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+/* Botões */
+a.btn, button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+a.btn:hover, button:hover {
+  background-color: #444;
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+/* PIX Code */
+code {
+  font-family: monospace;
+  background-color: #eee;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 8px;
+  margin-top: 20px;
 }
